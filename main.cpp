@@ -36,8 +36,20 @@ Node* binarySearch(DoublyLinkedList& list, std::string key) {
     return NULL;
 }
 
-// Resto del código...
-
+std::vector<Node*> sequentialSearch(DoublyLinkedList& list, std::string value) {
+    std::vector<Node*> results;
+    Node* temp = list.head;
+    while (temp != NULL) {
+        for (const auto& val : temp->data.values) {
+            if (val == value) {
+                results.push_back(temp);
+                break;
+            }
+        }
+        temp = temp->next;
+    }
+    return results;
+}
 int main() {
     DoublyLinkedList list;
     std::string filename = "datos.txt";
@@ -55,12 +67,13 @@ int main() {
         std::cin >> option;
 
         switch (option) {
-            case 1:
+            case 1: {
                 std::cout << "Ingrese la ruta del archivo: ";
                 std::cin >> filename;
                 MenuYCarga::loadData(list, filename);
                 break;
-            case 2:
+            }
+            case 2: {
                 std::cout << "Ingrese la llave a buscar: ";
                 std::cin >> key;
                 result = binarySearch(list, Hash::hashFunction(key));
@@ -74,9 +87,25 @@ int main() {
                     std::cout << "No se encontraron datos con esa llave\n";
                 }
                 break;
-            case 3:
-                // Implementa la búsqueda por valor aquí
+            }
+            case 3: {
+                std::string value;
+                std::cout << "Ingrese el valor a buscar: ";
+                std::cin >> value;
+                std::vector<Node*> results = sequentialSearch(list, value);
+                if (!results.empty()) {
+                    std::cout << "Datos encontrados: \n";
+                    for (const auto& node : results) {
+                        for (const auto& val : node->data.values) {
+                            std::cout << val << " ";
+                        }
+                        std::cout << std::endl;
+                    }
+                } else {
+                    std::cout << "No se encontraron datos con ese valor\n";
+                }
                 break;
+            }
             case 4:
                 return 0;
             default:
