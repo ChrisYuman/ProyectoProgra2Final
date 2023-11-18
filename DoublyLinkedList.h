@@ -16,10 +16,10 @@ public:
     Node* tail;
 
     DoublyLinkedList();
-    ~DoublyLinkedList(); // Agregar un destructor para liberar la memoria al destruir el objeto
+    ~DoublyLinkedList();
     void addNode(Key data);
     void display();
-    void clearMemory(); // Declarar la función clearMemory
+    void clearMemory();
 };
 
 #endif

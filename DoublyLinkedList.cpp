@@ -7,7 +7,7 @@ DoublyLinkedList::DoublyLinkedList() {
 }
 
 DoublyLinkedList::~DoublyLinkedList() {
-    clearMemory(); // Llama a clearMemory en el destructor
+    clearMemory();
 }
 
 void DoublyLinkedList::addNode(Key data) {
@@ -32,8 +32,6 @@ void DoublyLinkedList::addNode(Key data) {
         // Liberar memoria antes de cerrar el programa
         clearMemory();
 
-        // Puedes elegir cerrar el programa o manejar de otra manera según tus necesidades.
-        exit(EXIT_FAILURE);
     }
 }
 

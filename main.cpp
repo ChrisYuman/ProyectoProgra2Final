@@ -156,7 +156,7 @@ int main() {
             case 4:
                 return 0;
             default:
-                std::cout << "Opción no válida\n";
+                std::cout << "Opcion no valida\n";
         }
     }
 
