@@ -3,7 +3,7 @@
 #include "Hash.h"
 #include <iostream>
 
-// Función para realizar una búsqueda binaria en la lista 2
+// Función para realizar una búsqueda binaria en la lista
 Node* binarySearch(DoublyLinkedList& list, std::string key) {
     Node* start = list.head;
     Node* end = list.tail;
