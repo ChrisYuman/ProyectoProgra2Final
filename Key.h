@@ -6,7 +6,11 @@
 
 class Key {
 public:
+    // Miembro para almacenar la clave
+
     std::string key;
+    // Vector para almacenar los valores asociados a la clave
+
     std::vector<std::string> values;
 };
 

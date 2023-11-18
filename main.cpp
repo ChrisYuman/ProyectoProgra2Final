@@ -1,12 +1,14 @@
-#include "MenuYCarga.h"
-#include "DoublyLinkedList.h"
-#include "Hash.h"
+#include "MenuYCarga.h" //Se incluye el .h
+#include "DoublyLinkedList.h" //Se incluye el .h
+#include "Hash.h" //Se incluye el .h
 #include <iostream>
 
 // Función para realizar una búsqueda binaria en la lista
 std::vector<Node*> binarySearch(DoublyLinkedList& list, std::string key) {
     std::vector<Node*> results;
     Node* temp = list.head;
+
+    // Recorre la lista y agrega a 'results' los nodos cuya clave coincide con 'key'
 
     while (temp != nullptr) {
         if (temp->data.key == key) {
@@ -24,6 +26,9 @@ std::vector<Node*> binarySearch(DoublyLinkedList& list, std::string key) {
 std::vector<Node*> sequentialSearch(DoublyLinkedList& list, std::string value) {
     std::vector<Node*> results;
     Node* temp = list.head;
+
+    // Recorre la lista y agrega a 'results' los nodos cuyos valores contienen 'value'
+
     while (temp != NULL) {
         for (const auto& val : temp->data.values) {
             if (val == value) {
@@ -36,6 +41,8 @@ std::vector<Node*> sequentialSearch(DoublyLinkedList& list, std::string value) {
     return results;
 }
 int main() {
+
+    // Mensaje de bienvenida y presentación visual
 
     std::cout << "Bienvenido al proyecto de busqueda de llaves y datos. Por Christopher Yuman" << std::endl;
     std::cout << "                                                                                   \n";
@@ -90,6 +97,8 @@ int main() {
     MenuYCarga::loadData(list, filename);
     std::cout << "Datos cargados exitosamente.\n";
 
+    // Preguntar primero por la carga de datos
+
     while (true) {
         std::cout << "1. Cargar mas datos\n";
         std::cout << "2. Buscar datos por llave\n";
@@ -99,6 +108,8 @@ int main() {
 
         int option;
         std::cin >> option;
+
+        // Switch para manejar las opciones del usuario
 
         switch (option) {
             case 1: {
@@ -156,7 +167,7 @@ int main() {
             case 4:
                 return 0;
             default:
-                std::cout << "Opcion no valida\n";
+                std::cout << "Opcion no vaºlida\n";
         }
     }
 

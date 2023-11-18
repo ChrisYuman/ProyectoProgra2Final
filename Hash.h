@@ -5,6 +5,8 @@
 
 class Hash {
 public:
+    // Declaración de la función de hash
+
     static std::string hashFunction(const std::string& key);
 };
 
